@@ -1,0 +1,64 @@
+<!-- Loading bar -->
+<fuse-loading-bar></fuse-loading-bar>
+
+<fuse-drawer
+    [fixed]="true"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'rightDrawer'"
+    [opened]="drawerOpened"
+    [transparentOverlay]="false"
+>
+</fuse-drawer>
+
+<!-- Wrapper -->
+<div class="relative w-full h-full">
+
+    <div
+        class="absolute top-2 left-2 flex flex-0 items-center w-fit h-12 px-2 z-49 shadow-md bg-card print:hidden"
+    >
+        <!-- Components -->
+        <div class="flex items-center ml-auto space-x-0.5 sm:space-x-2">
+            <img
+                src="assets/images/logo/logo_mef.jpg"
+                alt=""
+                class="w-36 h-8"
+            />
+            <div class="w-[1px] h-[20px] bg-[#9CA3AF]"></div>
+            <h1 class="tracking-tighter">Geovisor</h1>
+            <div class="w-[1px] h-[20px] bg-[#9CA3AF]"></div>
+
+            <search [appearance]="'bar'"></search>
+
+            <button
+                class="lg:hidden"
+                mat-icon-button
+                (click)="quickChat.toggle()"
+
+            >
+                <mat-icon
+                    [svgIcon]="'heroicons_outline:wrench-screwdriver'"
+                ></mat-icon>
+            </button>
+            <user></user>
+        </div>
+    </div>
+
+    <div class="w-10 h-10 bg-[#1A73E8] absolute top-2/4 left-2 rounded-lg cursor-pointer">
+
+        <!-- button toggle results-->
+        <button mat-icon-button    [matTooltip]="'Abrir'" class="" (click)="toggleDrawerOpen()">
+            <mat-icon
+                class="text-white icon-size-5"
+                svgIcon="heroicons_outline:chevron-double-right"
+            ></mat-icon>
+        </button>
+    </div>
+
+    <div class="absolute bottom-2">
+        <map-layer></map-layer>
+    </div>
+    <map class="w-full h-full"></map>
+</div>
+
+<!-- Quick chat -->
+<quick-chat #quickChat="quickChat"></quick-chat>
