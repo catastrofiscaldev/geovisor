@@ -236,7 +236,7 @@ const theming = plugin.withOptions((options) => ({
                         },
                         foreground: {
                             light: {
-                                'text-default'  : colors.slate[800],
+                                'text-default'  : '#26292E',
                                 'text-secondary': colors.slate[500],
                                 'text-hint'     : colors.slate[400],
                                 'text-disabled' : colors.slate[400],
