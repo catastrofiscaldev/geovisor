@@ -1,6 +1,6 @@
 import { BooleanInput } from '@angular/cdk/coercion';
 import { NgClass, NgIf } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewEncapsulation, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,7 +29,7 @@ export class UserComponent implements OnInit, OnDestroy
     user: User;
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
-
+    public userLoaded = signal<boolean>(false);
     /**
      * Constructor
      */
@@ -56,7 +56,7 @@ export class UserComponent implements OnInit, OnDestroy
             .subscribe((user: User) =>
             {
                 this.user = user;
-
+                this.userLoaded.set(true);
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
             });

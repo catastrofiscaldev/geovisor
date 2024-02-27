@@ -1,0 +1,31 @@
+<div class="flex flex-col">
+    <div class="w-full flex items-center px-4">
+        <mat-icon
+            class="icon-size-5 mr-3 text-primary-900"
+            svgIcon="heroicons_solid:queue-list"
+        ></mat-icon>
+        <span class="m-2 text-lg font-medium text-primary-900">Resultados </span>
+    </div>
+    <div class="max-h-120"
+    fuseScrollbar
+        [fuseScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}"
+    >
+        @for (item of data; track $index) {
+        <div class="w-full flex flex-col px-4 py-1">
+            <div class="flex items-center justify-between text-primary font-medium cursor-pointer" (click)="navegate(item.id)">
+                <p  class="hover:underline hover:decoration-primary">
+                    {{ item.type }} : {{ item.value }}
+                </p>
+                <button mat-icon-button>
+                    <mat-icon svgIcon="mat_outline:zoom_in"></mat-icon>
+                </button>
+            </div>
+            <div class="w-full">
+                {{ item.dir }}
+            </div>
+
+            <mat-divider class="my-3"></mat-divider>
+        </div>
+        }
+    </div>
+</div>

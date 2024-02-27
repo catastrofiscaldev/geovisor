@@ -10,12 +10,14 @@ import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Navigation } from 'app/core/navigation/navigation.types';
 import { MapLayerComponent } from 'app/layout/common/map-layer/map-layer.component';
 import { QuickChatComponent } from 'app/layout/common/quick-chat/quick-chat.component';
-import { SearchComponent } from 'app/layout/common/search/search.component';
 import { UserComponent } from 'app/layout/common/user/user.component';
-import { MapComponent } from 'app/modules/geovisor/map/map.component';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseDrawerComponent } from '@fuse/components/drawer';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MapComponent } from 'app/modules/landing/geovisor/map/map.component';
+import { SearchComponent } from 'app/modules/landing/geovisor/components/search/search.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { ResultComponent } from 'app/modules/landing/geovisor/components/result/result.component';
 
 
 @Component({
@@ -23,7 +25,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     templateUrl  : './classic.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
-    imports      : [FuseLoadingBarComponent,FuseDrawerComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, SearchComponent, UserComponent, NgIf, RouterOutlet, QuickChatComponent, MapComponent, MapLayerComponent, MatTooltipModule],
+    imports      : [FuseLoadingBarComponent,FuseDrawerComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, UserComponent, NgIf, RouterOutlet, QuickChatComponent, MapComponent, MapLayerComponent, MatTooltipModule, SearchComponent, MatDividerModule, ResultComponent],
 })
 export class ClassicLayoutComponent implements OnInit, OnDestroy
 {

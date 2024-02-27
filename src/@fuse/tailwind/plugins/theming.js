@@ -77,7 +77,7 @@ const theming = plugin.withOptions((options) => ({
                         ])),
                     },
                 ])),
-                ['primary', 'accent', 'warn'],
+                ['primary', 'secondary','black','skyBlue','accent', 'warn'],
             ),
         ]));
 

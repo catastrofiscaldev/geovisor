@@ -10,8 +10,12 @@ const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/uti
  * Tailwind-like color palettes automatically
  */
 const customPalettes = {
-    brand: generatePalette('#2196F3')
+    brand: generatePalette('#CF000B'),
+    black: generatePalette('#26292E'),
+    blue: generatePalette('#0056AC'),
+    skyBlue: generatePalette('#1A73E8'),
 };
+
 
 /**
  * Themes
@@ -19,10 +23,10 @@ const customPalettes = {
 const themes = {
     // Default theme is required for theming system to work correctly!
     'default': {
-        primary  : {
-            ...colors.indigo,
-            DEFAULT: colors.indigo[600]
-        },
+        primary  : customPalettes.blue,
+        secondary  : customPalettes.brand,
+        black : customPalettes.black,
+        skyBlue : customPalettes.skyBlue,
         accent   : {
             ...colors.slate,
             DEFAULT: colors.slate[800]
@@ -35,29 +39,6 @@ const themes = {
             500: colors.red['50']
         }
     },
-    // Rest of the themes will use the 'default' as the base
-    // theme and will extend it with their given configuration.
-    'brand' : {
-        primary: customPalettes.brand
-    },
-    'teal'  : {
-        primary: {
-            ...colors.teal,
-            DEFAULT: colors.teal[600]
-        }
-    },
-    'rose'  : {
-        primary: colors.rose
-    },
-    'purple': {
-        primary: {
-            ...colors.purple,
-            DEFAULT: colors.purple[600]
-        }
-    },
-    'amber' : {
-        primary: colors.amber
-    }
 };
 
 /**

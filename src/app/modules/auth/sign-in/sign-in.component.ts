@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormsModule, NgForm, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,9 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertComponent, FuseAlertType } from '@fuse/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
+
+import { Captcha } from '../sign-in/captcha.interface';
+import { CaptchaService } from './captcha.service';
 
 @Component({
     selector     : 'auth-sign-in',
@@ -28,17 +31,19 @@ export class AuthSignInComponent implements OnInit
         type   : 'success',
         message: '',
     };
-    signInForm: UntypedFormGroup;
+    signInForm: FormGroup;
     showAlert: boolean = false;
-
+    captcha: Captcha;
+    captchaImage: any;
     /**
      * Constructor
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _authService: AuthService,
-        private _formBuilder: UntypedFormBuilder,
+        private _formBuilder: FormBuilder,
         private _router: Router,
+        private _captchaService: CaptchaService
     )
     {
     }
@@ -52,10 +57,12 @@ export class AuthSignInComponent implements OnInit
      */
     ngOnInit(): void
     {
+        this.getCaptcha();
         // Create the form
         this.signInForm = this._formBuilder.group({
-            email     : ['hughes.brian@company.com', [Validators.required, Validators.email]],
-            password  : ['admin', Validators.required],
+            dni     : ['12345678', [Validators.required, Validators.maxLength(8)]],
+            f_emision  : ['12/12/2023', Validators.required],
+            captcha: ['', Validators.required],
             rememberMe: [''],
         });
     }
@@ -115,4 +122,19 @@ export class AuthSignInComponent implements OnInit
                 },
             );
     }
+
+    getCaptcha(): void{
+        this._captchaService.getCaptcha().subscribe((result: Captcha)=>{
+            if(result){
+                this.captcha = result;
+
+                //this.captchaImage=btoa(String.fromCharCode.apply(null, new Uint8Array(this.captcha.captchaImage)));
+
+                //this.captchaImage= btoa(JSON.stringify(this.captcha.captchaImage));
+                //console.log(' this.captchaImage>>', this.captchaImage);
+            }
+        });
+    }
+
+
 }

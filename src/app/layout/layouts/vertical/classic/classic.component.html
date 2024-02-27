@@ -8,11 +8,13 @@
     [opened]="drawerOpened"
     [transparentOverlay]="false"
 >
+    <div class="flex flex-col w-full">
+        <router-outlet *ngIf="true"></router-outlet>
+    </div>
 </fuse-drawer>
 
 <!-- Wrapper -->
 <div class="relative w-full h-full">
-
     <div
         class="absolute top-2 left-2 flex flex-0 items-center w-fit h-12 px-2 z-49 shadow-md bg-card print:hidden"
     >
@@ -27,37 +29,57 @@
             <h1 class="tracking-tighter">Geovisor</h1>
             <div class="w-[1px] h-[20px] bg-[#9CA3AF]"></div>
 
-            <search [appearance]="'bar'"></search>
+            <!-- button search -->
+            <button mat-icon-button (click)="toggleDrawerOpen()">
+                <mat-icon
+                    svgIcon="heroicons_outline:magnifying-glass"
+                ></mat-icon>
+            </button>
 
+            <!-- button tools -->
             <button
                 class="lg:hidden"
                 mat-icon-button
                 (click)="quickChat.toggle()"
-
             >
                 <mat-icon
                     [svgIcon]="'heroicons_outline:wrench-screwdriver'"
                 ></mat-icon>
             </button>
+
+            <!-- user -->
             <user></user>
         </div>
     </div>
 
-    <div class="w-10 h-10 bg-[#1A73E8] absolute top-2/4 left-2 rounded-lg cursor-pointer">
-
-        <!-- button toggle results-->
-        <button mat-icon-button    [matTooltip]="'Abrir'" class="" (click)="toggleDrawerOpen()">
+    <!-- button toggle open result-->
+    <div
+        class="w-10 h-10 bg-[#1A73E8] absolute top-2/4 left-2 rounded-lg cursor-pointer z-49"
+    >
+        <button
+            mat-icon-button
+            [matTooltip]="drawerOpened ? 'Cerrar' : 'Abrir'"
+            class=""
+            (click)="toggleDrawerOpen()"
+        >
+            @if (drawerOpened) {
+            <mat-icon
+                class="text-white icon-size-5"
+                svgIcon="heroicons_outline:chevron-double-left"
+            ></mat-icon>
+            } @else {
             <mat-icon
                 class="text-white icon-size-5"
                 svgIcon="heroicons_outline:chevron-double-right"
             ></mat-icon>
+            }
         </button>
     </div>
 
-    <div class="absolute bottom-2">
+    <div class="absolute bottom-2 z-49">
         <map-layer></map-layer>
     </div>
-    <map class="w-full h-full"></map>
+    <!-- <map class="w-full h-full"></map> -->
 </div>
 
 <!-- Quick chat -->

@@ -65,7 +65,7 @@ export class AuthMockApi
             .reply(({request}) =>
             {
                 // Sign in successful
-                if ( request.body.email === 'hughes.brian@company.com' && request.body.password === 'admin' )
+                if ( request.body.dni === '12345678' && request.body.f_emision === '12/12/2023' )
                 {
                     return [
                         200,
