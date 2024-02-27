@@ -5,6 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { FuseScrollbarDirective } from '@fuse/directives/scrollbar';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
     selector: 'result',
@@ -15,6 +16,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
         MatDividerModule,
         MatButtonModule,
         FuseScrollbarDirective,
+        MatTooltipModule
     ],
     templateUrl: './result.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -77,7 +79,10 @@ export class ResultComponent {
     ) {
 
     }
-    navegate(id){
+    goToDetail(id){
         this._router.navigate(['./', id], {relativeTo: this._activatedRoute});
+    }
+    zoomIn(){
+
     }
 }

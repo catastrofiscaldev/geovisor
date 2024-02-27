@@ -6,7 +6,7 @@
 $light-base: (
     foreground: (
         base: #000000,
-        divider: #E2E8F0, /* slate.200 */
+        divider: #DAE8FB,
         dividers: #E2E8F0, /* slate.200 */
         disabled: #94A3B8, /* slate.400 */
         disabled-button: #94A3B8, /* slate.400 */
@@ -45,7 +45,7 @@ $light-base: (
 $dark-base: (
     foreground: (
         base: #FFFFFF,
-        divider: rgba(241, 245, 249, 0.12), /* slate.100 + opacity */
+        divider: #DAE8FB, /* slate.100 + opacity */
         dividers: rgba(241, 245, 249, 0.12), /* slate.100 + opacity */
         disabled: #475569, /* slate.600 */
         disabled-button: #1E293B, /* slate.800 */

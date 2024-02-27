@@ -6,26 +6,26 @@
         ></mat-icon>
         <span class="m-2 text-lg font-medium text-primary-900">Resultados </span>
     </div>
-    <div class="max-h-120"
+    <div class="max-h-120 p-2"
     fuseScrollbar
         [fuseScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}"
     >
         @for (item of data; track $index) {
-        <div class="w-full flex flex-col px-4 py-1">
-            <div class="flex items-center justify-between text-primary font-medium cursor-pointer" (click)="navegate(item.id)">
-                <p  class="hover:underline hover:decoration-primary">
+        <div class="w-full flex px-4 py-2 items-center justify-between">
+            <div class="w-10/12">
+                <p  class="hover:underline hover:decoration-primary" (click)="goToDetail(item.id)">
                     {{ item.type }} : {{ item.value }}
                 </p>
-                <button mat-icon-button>
+                <p>{{ item.dir }}</p>
+            </div>
+            <div class="w-2/12 px-2">
+                <button mat-icon-button (click)="zoomIn()" [matTooltip]="'Ver en el mapa'">
                     <mat-icon svgIcon="mat_outline:zoom_in"></mat-icon>
                 </button>
             </div>
-            <div class="w-full">
-                {{ item.dir }}
-            </div>
-
-            <mat-divider class="my-3"></mat-divider>
         </div>
+        <mat-divider class="my-3"></mat-divider>
+
         }
     </div>
 </div>

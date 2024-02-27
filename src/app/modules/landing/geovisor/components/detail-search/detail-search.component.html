@@ -1,6 +1,38 @@
-<div class="flex items-center justify-between w-full p-4">
-    Detalle 780669940-0002-9
-    <button mat-icon-button >
-        <mat-icon class="icon-size-5 text-skyBlue-500" svgIcon="heroicons_outline:arrow-left"></mat-icon>
-    </button>
+<div class="w-full p-4 flex flex-col gap-4">
+    <div class="flex items-center justify-between w-full">
+        Detalle 780669940-0002-9
+        <button mat-icon-button (click)="goBack()">
+            <mat-icon
+                class="icon-size-5 text-skyBlue-500"
+                svgIcon="heroicons_outline:arrow-left"
+            ></mat-icon>
+        </button>
+    </div>
+
+    <div class="flex items-center justify-items-start gap-x-6">
+        <!-- icons -->
+        @for (icon of icons; track $index) {
+        <div class="flex items-center flex-col">
+            <button mat-icon-button>
+                <mat-icon [svgIcon]="icon.icon"></mat-icon>
+            </button>
+            <span class="text-sm">{{ icon.name }}</span>
+        </div>
+        }
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <h1>Dirección</h1>
+        <p>Av. Abancay 200</p>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div>
+        <h1>Codigos</h1>
+        <p>780669940-0002-9 </p>
+    </div>
+
+
 </div>
