@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,7 +25,7 @@ import { ResultComponent } from 'app/modules/landing/geovisor/components/result/
     templateUrl  : './classic.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
-    imports      : [FuseLoadingBarComponent,FuseDrawerComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, UserComponent, NgIf, RouterOutlet, QuickChatComponent, MapComponent, MapLayerComponent, MatTooltipModule, SearchComponent, MatDividerModule, ResultComponent],
+    imports      : [FuseLoadingBarComponent,FuseDrawerComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, UserComponent, NgIf, RouterOutlet, QuickChatComponent, MapComponent, MapLayerComponent, MatTooltipModule, SearchComponent, MatDividerModule, ResultComponent, NgClass],
 })
 export class ClassicLayoutComponent implements OnInit, OnDestroy
 {

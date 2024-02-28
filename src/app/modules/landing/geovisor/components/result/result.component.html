@@ -1,22 +1,22 @@
 <div class="flex flex-col">
     <div class="w-full flex items-center px-4">
         <mat-icon
-            class="icon-size-5 mr-3 text-primary-900"
+            class="icon-size-5 mr-3 text-black"
             svgIcon="heroicons_solid:queue-list"
         ></mat-icon>
-        <span class="m-2 text-lg font-medium text-primary-900">Resultados </span>
+        <span class="m-2 text-lg font-medium">Resultados </span>
     </div>
     <div class="max-h-120 p-2"
     fuseScrollbar
         [fuseScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}"
     >
         @for (item of data; track $index) {
-        <div class="w-full flex px-4 py-2 items-center justify-between">
-            <div class="w-10/12">
-                <p  class="hover:underline hover:decoration-primary" (click)="goToDetail(item.id)">
+        <div class="w-full flex p-2 py-1 items-center justify-between">
+            <div class="w-10/12 hover:bg-secondary-50 p-2 rounded-sm" [matTooltip]="'Ver detalle'" (click)="goToDetail(item.id)">
+                <p  class=" text-primary-900">
                     {{ item.type }} : {{ item.value }}
                 </p>
-                <p>{{ item.dir }}</p>
+                <p class="font-light">{{ item.dir }}</p>
             </div>
             <div class="w-2/12 px-2">
                 <button mat-icon-button (click)="zoomIn()" [matTooltip]="'Ver en el mapa'">
@@ -24,8 +24,7 @@
                 </button>
             </div>
         </div>
-        <mat-divider class="my-3"></mat-divider>
-
+        <mat-divider class="my-1"></mat-divider>
         }
     </div>
 </div>

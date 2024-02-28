@@ -10,10 +10,10 @@ const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/uti
  * Tailwind-like color palettes automatically
  */
 const customPalettes = {
-    brand: generatePalette('#CF000B'),
+    brand: generatePalette('#ED3237'),
     black: generatePalette('#26292E'),
-    blue: generatePalette('#0056AC'),
-    skyBlue: generatePalette('#1A73E8'),
+    blue: generatePalette('#0093F8'),
+    skyBlue: generatePalette('#004899'),
 };
 
 
@@ -27,10 +27,7 @@ const themes = {
         secondary  : customPalettes.brand,
         black : customPalettes.black,
         skyBlue : customPalettes.skyBlue,
-        accent   : {
-            ...colors.slate,
-            DEFAULT: colors.slate[800]
-        },
+        accent   : customPalettes.skyBlue,
         warn     : {
             ...colors.red,
             DEFAULT: colors.red[600]

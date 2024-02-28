@@ -36,6 +36,7 @@ export class FuseSplashScreenService
     show(): void
     {
         this._document.body.classList.remove('fuse-splash-screen-hidden');
+        this._document.body.classList.add('fuse-splash-screen-show');
     }
 
     /**
@@ -44,5 +45,6 @@ export class FuseSplashScreenService
     hide(): void
     {
         this._document.body.classList.add('fuse-splash-screen-hidden');
+        this._document.body.classList.remove('fuse-splash-screen-show');
     }
 }

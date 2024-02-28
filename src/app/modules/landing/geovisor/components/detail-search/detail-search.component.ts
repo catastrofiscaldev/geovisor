@@ -22,7 +22,54 @@ export class DetailSearchComponent {
         private _activatedRoute: ActivatedRoute
     ) { }
 
-
+    url ='';
+    data = [
+        {
+            prop: 'Tipo de predio',
+            value: '-',
+        }
+        ,
+        {
+            prop: 'Area',
+            value: '252 m2',
+        },
+        {
+            prop: 'Longitud Frente',
+            value: '6 m2',
+        },
+        {
+            prop: 'Uso',
+            value: 'Casa habitacional',
+        },
+        {
+            prop: 'Cantidad Habitantes',
+            value: '3',
+        },
+        {
+            prop: 'Autovaluo',
+            value: '778.23',
+        },
+        {
+            prop: 'Arancel',
+            value: '253',
+        },
+        {
+            prop: 'Material',
+            value: 'Ladrillo',
+        },
+        {
+            prop: 'Estado conservación',
+            value: 'Bueno',
+        },
+        {
+            prop: 'Clasificación',
+            value: '252 m2',
+        },
+        {
+            prop: 'Depreciación ',
+            value: '3%',
+        }
+    ]
     icons = [
         {
             name: 'Compartir',

@@ -11,8 +11,21 @@
 #map-zoom-control {
     position: absolute;
     top: 70px;
-    left: 10px;
+    left: 8px;
     z-index: 10;
     width: 30px;
     height: 60px;
+}
+
+:host ::ng-deep .custom-zoom {
+    background-color: transparent !important;
+}
+
+:host ::ng-deep .custom-zoom-in, :host ::ng-deep .custom-zoom-out {
+    height: 32px !important;
+    width: 32px !important;
+    font-size: 24px !important;
+    margin-top: 4px;
+    outline: none !important;
+
 }

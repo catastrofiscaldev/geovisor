@@ -222,7 +222,7 @@ const theming = plugin.withOptions((options) => ({
                                 'bg-card'      : '#FFFFFF',
                                 'bg-default'   : colors.slate[100],
                                 'bg-dialog'    : '#FFFFFF',
-                                'bg-hover'     : chroma(colors.slate[400]).alpha(0.12).css(),
+                                'bg-hover'     : chroma(colors.teal[400]).alpha(0.12).css(),
                                 'bg-status-bar': colors.slate[300],
                             },
                             dark : {

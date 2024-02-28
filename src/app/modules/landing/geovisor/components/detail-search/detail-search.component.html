@@ -1,5 +1,5 @@
-<div class="w-full p-4 flex flex-col gap-4">
-    <div class="flex items-center justify-between w-full">
+<div class="w-full h-full p-4 pb-2 flex flex-col gap-x-4">
+    <div class="flex items-center justify-between w-full text-lg text-skyBlue font-medium">
         Detalle 780669940-0002-9
         <button mat-icon-button (click)="goBack()">
             <mat-icon
@@ -12,27 +12,54 @@
     <div class="flex items-center justify-items-start gap-x-6">
         <!-- icons -->
         @for (icon of icons; track $index) {
-        <div class="flex items-center flex-col">
+        <div class="flex items-center flex-col text-primary">
             <button mat-icon-button>
-                <mat-icon [svgIcon]="icon.icon"></mat-icon>
+                <mat-icon class="icon-size-5 text-primary" [svgIcon]="icon.icon"></mat-icon>
             </button>
             <span class="text-sm">{{ icon.name }}</span>
         </div>
         }
     </div>
 
-    <mat-divider></mat-divider>
+    <mat-divider class="my-4"></mat-divider>
 
-    <div>
-        <h1>Dirección</h1>
-        <p>Av. Abancay 200</p>
+    <div class="flex flex-col gap-1">
+        <h1 class="text-skyBlue font-medium">Dirección</h1>
+        <p class="font-light">Av. Abancay 200</p>
     </div>
 
-    <mat-divider></mat-divider>
-    <div>
-        <h1>Codigos</h1>
-        <p>780669940-0002-9 </p>
+    <mat-divider class="my-4"></mat-divider>
+    <div class="flex flex-col gap-1">
+        <h1 class="text-skyBlue font-medium">Codigos</h1>
+        <p class="font-light"><strong>CPU : </strong> 780669940-0002-9 </p>
     </div>
 
+    <mat-divider class="my-4"></mat-divider>
 
+    <div class="flex flex-col gap-4">
+        <h1 class="text-skyBlue font-medium">Caracteristicas</h1>
+        <div class="flex flex-col gap-y-2 justify-center">
+            @for (item of data; track $index) {
+                <div class="flex gap-1">
+                    <p class="w-6/12">{{item.prop}}</p>
+                    <p class="w-6/12 font-light">: {{item.value}}</p>
+                </div>
+            }
+        </div>
+    </div>
+
+    <mat-divider class="my-4"></mat-divider>
+    <div class="flex flex-col gap-1">
+        <h1 class="text-skyBlue font-medium">Foto</h1>
+        <div class="w-full">
+            @if (url) {
+                <img src="{{ url }}" alt="" class="w-full h-auto rounded-md" />
+            }
+            @else {
+                <div class="bg-slate-100 w-fit p-4 rounded-md">
+                    <mat-icon  class="icon-size-30 text-black-200" svgIcon="mat_outline:photo"></mat-icon>
+                </div>
+            }
+        </div>
+    </div>
 </div>
