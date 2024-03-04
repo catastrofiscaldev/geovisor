@@ -21,11 +21,12 @@
     background-color: transparent !important;
 }
 
-:host ::ng-deep .custom-zoom-in, :host ::ng-deep .custom-zoom-out {
+:host ::ng-deep .custom-zoom-in,
+:host ::ng-deep .custom-zoom-out {
     height: 32px !important;
     width: 32px !important;
     font-size: 24px !important;
     margin-top: 4px;
     outline: none !important;
-
 }
+

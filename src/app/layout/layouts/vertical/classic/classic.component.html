@@ -29,7 +29,7 @@
     </div>
 
     <!-- button toggle open result-->
-    <div class="w-10 h-10 bg-[#F5BB47] absolute top-2/4 left-2 rounded-lg cursor-pointer z-49 shadow-md">
+    <div class="w-10 h-10 bg-primary absolute top-2/4 left-2 rounded-lg cursor-pointer z-49 shadow-md">
         <button mat-icon-button [matTooltip]="drawerOpened ? 'Cerrar' : 'Abrir'" class="" (click)="toggleDrawerOpen()">
             @if (drawerOpened) {
             <mat-icon class="text-white icon-size-6" svgIcon="heroicons_outline:chevron-double-left"></mat-icon>
@@ -37,10 +37,6 @@
             <mat-icon class="text-white icon-size-6" svgIcon="heroicons_outline:chevron-double-right"></mat-icon>
             }
         </button>
-    </div>
-
-    <div class="absolute bottom-2 z-49">
-        <map-layer></map-layer>
     </div>
     <map class="w-full h-full"></map>
 </div>

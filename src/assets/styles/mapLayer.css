@@ -1,0 +1,168 @@
+
+/* show- icon  */
+.ol-layerswitcher-image > button,
+.ol-layerswitcher > button {
+    background-color: #fff;
+    float: right;
+    z-index: 10;
+    position: relative;
+    font-size: 1.7em;
+}
+
+/*<icon layer> */
+.ol-layerswitcher-image > button:after,
+.ol-layerswitcher-image > button:before,
+.ol-layerswitcher > button:after,
+.ol-layerswitcher > button:before {
+    content: "";
+    position: absolute;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 0.15em;
+    -webkit-transform: scaleY(0.8) rotate(45deg);
+    transform: scaleY(0.8) rotate(45deg);
+}
+.ol-layerswitcher-image > button:before,
+.ol-layerswitcher > button:before {
+    background: #e2e4e1;
+    top: 0.32em;
+    left: 0.34em;
+    -webkit-box-shadow: 0.1em 0.1em #325158;
+    box-shadow: 0.1em 0.1em #325158;
+}
+
+.ol-layerswitcher-image > button:after,
+.ol-layerswitcher > button:after {
+    top: 0.22em;
+    left: 0.34em;
+    background: #83bcc5;
+    background-image: radial-gradient(
+        circle at 0.85em 0.6em,
+        #70b3be 0,
+        #70b3be 0.65em,
+        #83bcc5 0.65em
+    );
+}
+
+.ol-control.ol-layerswitcher-image > button{
+    background-color: transparent ;
+    height: 74px !important;
+    width: 84px !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M0 0h24v24H0z" fill="none"/><path d="M18.29 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.88-4.89c.38-.38.38-1.02 0-1.4z"/></svg>');
+
+
+}
+/* position  */
+.ol-control.ol-layerswitcher-image {
+    position: absolute;
+    left: 12px;
+    text-align: left;
+    bottom: 16px;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+}
+
+/* orientacion */
+.ol-layerswitcher-image .panel {
+    list-style: none;
+    padding: 0.25em;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+/* show defect */
+.ol-layerswitcher-image.ol-collapsed .panel {
+    display: none;
+}
+.ol-layerswitcher-image.ol-unselectable.ol-control {
+    display: flex;
+    align-items: center;
+}
+.ol-layerswitcher-image.ol-unselectable.ol-control.ol-collapsed{
+    float: right;
+    clear:both;
+}
+.ol-layerswitcher-image.ol-forceopen .panel {
+    display:flex;
+
+  }
+
+  .ol-layerswitcher-image button {
+    float: right;
+    display:none;
+  }
+
+  .ol-layerswitcher-image.ol-collapsed button {
+    display:block;
+    position:relative;
+  }
+
+
+/* image */
+.ol-layerswitcher-image button {
+    float: right;
+    display: none;
+}
+
+
+/* diseño imagen */
+.ol-layerswitcher-image li {
+    border-radius: 4px;
+    border: 3px solid transparent;
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    width: 84px;
+    height: 74px;
+    margin: 2px;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* ok */
+.ol-layerswitcher-image li p,
+.ol-layerswitcher-image li.ol-header {
+    display: none;
+}
+
+/* border-image */
+.ol-layerswitcher-image li.ol-visible,
+.ol-layerswitcher-image li.select {
+    border: 2px solid #26292e;
+}
+
+
+.ol-layerswitcher-image li:hover p {
+    background-color: #26292e;
+    opacity: 0.7;
+    color: #fff;
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    height: 1.4em;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.8em;
+}
+
+.ol-control button:hover {
+    outline: none !important;
+}
+/*
+.ol-control {
+    background-color: transparent !important;
+}
+ */
+
+ .ol-layerswitcher-image.ol-unselectable.ol-control.ol-forceopen{
+    display: flex;
+    flex-wrap: wrap;
+
+ }

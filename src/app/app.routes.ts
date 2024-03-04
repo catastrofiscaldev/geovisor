@@ -45,4 +45,18 @@ export const appRoutes: Route[] = [
             {path: 'sig-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes')},
         ]
     },
+
+    {
+        path: '',
+        canActivate: [NoAuthGuard],
+        canActivateChild: [NoAuthGuard],
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        children: [
+
+            {path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes')},
+        ]
+    },
 ];

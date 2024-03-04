@@ -22,7 +22,7 @@
 </mat-menu>
 } @else {
 <!-- Button avatar sign in -->
-<button mat-icon-button>
+<button mat-icon-button (click)="singIn()">
     <mat-icon *ngIf="showAvatar" svgIcon="heroicons_outline:user"> </mat-icon>
 </button>
 }
