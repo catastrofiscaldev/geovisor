@@ -1,0 +1,138 @@
+/* show- icon  */
+.ol-layerswitcher-image>button,
+.ol-layerswitcher>button {
+    background-color: #fff;
+    float: right;
+    z-index: 10;
+    position: relative;
+    font-size: 1.7em;
+}
+
+
+.ol-control.ol-layerswitcher-image>button {
+    background-color: transparent;
+    height: 44px !important;
+    width: 44px !important;
+    background-image: url('../icons/layers.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* position  */
+.ol-control.ol-layerswitcher-image {
+    position: absolute;
+    left: 12px;
+    text-align: left;
+    bottom: 16px;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+}
+
+/* orientacion */
+.ol-layerswitcher-image .panel {
+    list-style: none;
+    padding: 0.25em;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+/* show defect */
+.ol-layerswitcher-image.ol-collapsed .panel {
+    display: none;
+}
+
+.ol-layerswitcher-image.ol-unselectable.ol-control {
+    display: flex;
+    align-items: center;
+}
+
+.ol-layerswitcher-image.ol-unselectable.ol-control.ol-collapsed {
+    float: right;
+    clear: both;
+}
+
+.ol-layerswitcher-image.ol-forceopen .panel {
+    display: flex;
+
+}
+
+.ol-layerswitcher-image button {
+    float: right;
+    display: none;
+}
+
+.ol-layerswitcher-image.ol-collapsed button {
+    display: block;
+    position: relative;
+}
+
+
+/* image */
+.ol-layerswitcher-image button {
+    float: right;
+    display: none;
+}
+
+
+/* diseño imagen */
+.ol-layerswitcher-image li {
+    border-radius: 4px;
+    border: 3px solid transparent;
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    width: 84px;
+    height: 74px;
+    margin: 2px;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* ok */
+.ol-layerswitcher-image li p,
+.ol-layerswitcher-image li.ol-header {
+    display: none;
+}
+
+/* border-image */
+.ol-layerswitcher-image li.ol-visible,
+.ol-layerswitcher-image li.select {
+    border: 2px solid #26292e;
+}
+
+
+.ol-layerswitcher-image li:hover p {
+    background-color: #26292e;
+    opacity: 0.7;
+    color: #fff;
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    height: 1.4em;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.8em;
+}
+
+.ol-control button:hover {
+    outline: none !important;
+}
+
+/*
+.ol-control {
+    background-color: transparent !important;
+}
+ */
+
+.ol-layerswitcher-image.ol-unselectable.ol-control.ol-forceopen {
+    display: flex;
+    flex-wrap: wrap;
+
+}
