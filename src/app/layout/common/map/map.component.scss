@@ -30,3 +30,96 @@
     outline: none !important;
 }
 
+.button-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 44px !important;
+    width: 44px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 10;
+    border-radius: 5px;
+    background-color: #83818169;
+}
+
+.button-control button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+#map-layer-control {
+    bottom: 16px;
+    right: 12px;
+}
+
+#map-basemap-control {
+    bottom: 16px;
+    left: 12px;
+}
+
+#map-basemap-control mat-icon {
+    font-size: 24px;
+    width: auto;
+    height: auto;
+}
+
+#map-layer-container {
+    position: absolute;
+    bottom: 38px;
+    right: 38px;
+    width: 300px;
+    padding: 20px;
+    z-index: 10;
+    background-color: #ffffffb2;
+    border-radius: 5px;
+}
+
+#map-basemap-container {
+    position: absolute;
+    bottom: 38px;
+    left: 38px;
+    width: auto;
+    padding: 20px;
+    z-index: 10;
+    background-color: #ffffffb2;
+    border-radius: 5px;
+}
+
+#map-basemap-container ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#map-basemap-container ul li {
+    display: flex;
+}
+
+#map-basemap-container button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+#map-basemap-container button:hover {
+    border: solid;
+}
+
+#map-basemap-container button img {
+    width: 84px;
+    height: 74px;
+}

@@ -1,4 +1,36 @@
 <div id="map-main-container">
     <div #mapElement class="map-container"></div>
     <div id="map-zoom-control"></div>
+    <div id="map-layer-control" class="button-control">
+        <button id="open-layer-control" (click)="toggleLayerContainerVisibility()">
+            <mat-icon class="icon-size-5 text-current" [svgIcon]="'heroicons_solid:square-3-stack-3d'"></mat-icon>
+        </button>
+    </div>
+    <div id="map-basemap-control" class="button-control">
+        <button id="open-basemap-control" (click)="toggleBaseMapContainerVisibility()">
+            <mat-icon class="icon-size-5 text-current" [svgIcon]="'heroicons_solid:map'"></mat-icon>
+        </button>
+    </div>
+    <div id="map-layer-container" [hidden]="!isLayerContainerVisible">
+        <!-- <div id="map-layer-container-features"> -->
+        <h4>Capas</h4>
+        <ul>
+            <li *ngFor="let feature of features">
+                <mat-checkbox [checked]="feature.visible" (change)="toggleFeatureVisibility(feature)">
+                    {{feature.title}}
+                </mat-checkbox>
+            </li>
+        </ul>
+    </div>
+    <div id="map-basemap-container" [hidden]="!isBaseMapContainerVisible">
+        <ul>
+            <li *ngFor="let baseMap of baseMaps">
+                <button class="map-basemap-item" (click)="toggleBaseMapVisibility(baseMap)">
+                    <img src="{{baseMap.url.replace('{z}', '10').replace('{x}', '512').replace('{y}', '349')}}"
+                        alt="{{baseMap.title}}">
+                    {{baseMap.title}}
+                </button>
+            </li>
+        </ul>
+    </div>
 </div>
