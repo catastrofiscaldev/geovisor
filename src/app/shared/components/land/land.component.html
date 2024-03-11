@@ -1,0 +1,8 @@
+<div class="flex w-full md:w-max lg:w-[300px] p-4 hover:bg-secondary-50 lg:px-6">
+    <div class="rounded-sm" [matTooltip]="'Ver detalle'" (click)="goToDetail(item.id)">
+        <p  class="text-primary-900">
+            {{ item.type }} {{ item.value }}
+        </p>
+        <p class="font-light truncate">{{ item.dir }}</p>
+    </div>
+</div>

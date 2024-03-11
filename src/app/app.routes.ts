@@ -17,22 +17,10 @@ export const appRoutes: Route[] = [
     // After the user signs in, the sign-in page will redirect the user to the 'signed-in-redirect'
     // path. Below is another redirection for that path to redirect the user to the desired
     // location. This is a small convenience to keep all main routes together here on this file.
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'geovisor'},
+    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'dashbord'},
 
 
-    // Auth routes for authenticated users
-    {
-        path: '',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
-        component: LayoutComponent,
-        data: {
-            layout: 'empty'
-        },
-        children: [
-            {path: 'sign-out', loadChildren: () => import('app/modules/auth/sign-out/sign-out.routes')},
-        ]
-    },
+
 
     {
         path: '',
@@ -41,8 +29,7 @@ export const appRoutes: Route[] = [
             layout: 'classic'
         },
         children: [
-            {path: 'geovisor', loadChildren: () => import('app/modules/landing/geovisor/geovisor.routes')},
-            {path: 'sig-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes')},
+            {path: 'geovisor', loadChildren: () => import('app/modules/admin/geovisor/geovisor.routes')},
         ]
     },
 
@@ -57,6 +44,23 @@ export const appRoutes: Route[] = [
         children: [
 
             {path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes')},
+        ]
+    },
+
+    {
+        path: '',
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+        component: LayoutComponent,
+        resolve: {
+            initialData: initialDataResolver,
+        },
+        data: {
+            layout: 'modern'
+        },
+        children: [
+
+            {path: 'dashbord', loadChildren: () => import('app/modules/admin/properties/dasboard.routes')}
         ]
     },
 ];

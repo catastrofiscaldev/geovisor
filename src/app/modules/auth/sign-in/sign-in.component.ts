@@ -18,6 +18,7 @@ import { CaptchaService } from './captcha.service';
 @Component({
     selector     : 'auth-sign-in',
     templateUrl  : './sign-in.component.html',
+    styleUrl:       './sign-in.component.scss',
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations,
     standalone   : true,

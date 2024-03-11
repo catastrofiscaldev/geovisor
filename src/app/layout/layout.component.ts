@@ -8,6 +8,7 @@ import { combineLatest, filter, map, Subject, takeUntil } from 'rxjs';
 import { EmptyLayoutComponent } from './layouts/empty/empty.component';
 
 import { ClassicLayoutComponent } from './layouts/vertical/classic/classic.component';
+import { ModernLayoutComponent } from './layouts/horizontal/modern/modern.component';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { ClassicLayoutComponent } from './layouts/vertical/classic/classic.compo
     styleUrls    : ['./layout.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
-    imports      : [NgIf, EmptyLayoutComponent, ClassicLayoutComponent, NgIf],
+    imports      : [NgIf, EmptyLayoutComponent, ClassicLayoutComponent, NgIf,ModernLayoutComponent],
 })
 export class LayoutComponent implements OnInit, OnDestroy
 {

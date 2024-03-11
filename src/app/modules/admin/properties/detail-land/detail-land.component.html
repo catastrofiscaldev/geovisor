@@ -1,0 +1,243 @@
+<div class="bg-white flex flex-auto flex-col px-3 py-4 rounded-md w-full h-full lg:px-10">
+    <div class="flex justify-between items-center py-4">
+        <h1 class="text-xl font-bold">CPU 528066940-0003-{{id}}</h1>
+        <button
+            mat-flat-button
+            class="fuse-mat-button-large"
+            [color]="'primary'"
+        >
+            <mat-icon svgIcon="mat_solid:download"></mat-icon>
+            Descargar
+        </button>
+    </div>
+
+    <div
+        class="flex flex-col flex-auto border-2 border-gray-50 rounded-md p-4 gap-y-8 lg:px-8"
+    >
+        <!-- ubicación -->
+        <div class="flex flex-col gap-4 w-full">
+            <div class="flex items-center gap-x-2 w-full">
+                <mat-icon class="text-primary" svgIcon="mat_solid:directions"></mat-icon>
+                <h1 class="text-primary font-medium">Dirección</h1>
+            </div>
+            <h1>Av. Avancay 620</h1>
+        </div>
+
+        <!-- reemplazar con ciclo for con datos div codigos-->
+        <div class="flex flex-col gap-4 w-full">
+            <div class="flex items-center gap-x-2 w-full">
+                <mat-icon class="text-primary" svgIcon="mat_solid:bookmark"></mat-icon>
+                <h1 class="text-primary font-medium">Codigos del predio</h1>
+            </div>
+            <div class="flex justify-between lg:gap-x-10 lg:justify-start">
+                <div class="flex gap-2 flex-col lg:flex-row">
+                    <h1 class="font-medium">Codigo catastral:</h1>
+                    <h1>528066940-0003-2</h1>
+                </div>
+                <div class="flex gap-2 flex-col lg:flex-row">
+                    <h1 class="font-medium">Partida registral:</h1>
+                    <h1>P002177788</h1>
+                </div>
+                <div class="flex gap-2 flex-col lg:flex-row">
+                    <h1 class="font-medium">Codigo predial:</h1>
+                    <h1>528066940889999</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Datos del Contribuyente -->
+        <div class="flex flex-col gap-4 w-full">
+            <div class="flex items-center gap-x-2 w-full">
+                <mat-icon class="fill-primary" svgIcon="mat_solid:licence"></mat-icon>
+                <h1 class="text-primary font-medium">Datos del Contribuyente</h1>
+            </div>
+            <div class="overflow-x-auto">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>No.</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.position }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="typeDocument">
+                        <th mat-header-cell *matHeaderCellDef>Documento</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.typeDocument }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="document">
+                        <th mat-header-cell *matHeaderCellDef>#Documento</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.document }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="typeCont">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Tipo de contribuyente
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.typeCont }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Nombres o Razon social
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.name }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="direction">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Domicilio Fiscal
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.direction }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef>Telefono</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.phone }}
+                        </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef>Correo</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.email }}
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr
+                        mat-row
+                        *matRowDef="let row; columns: displayedColumns"
+                    ></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Caracteristicas de la propiedad -->
+        <div class="flex flex-col gap-4 w-full">
+            <div class="flex items-center gap-x-2 w-full">
+                <mat-icon class="text-primary" svgIcon="mat_solid:directions"></mat-icon>
+                <h1 class="text-primary font-medium">Caracteristicas de la propiedad</h1>
+            </div>
+            <div class="flex flex-col w-full lg:flex-row lg:flex-wrap lg:gap-x-4 lg:justify-between">
+                @for (item of data; track $index) {
+                    <div class="flex flex-col w-full lg:w-2/6">
+                        <div class="flex gap-2 w-full justify-between">
+                            <h1 class="font-medium">
+                                {{item.title}}
+                            </h1>
+                            <h1 class="">
+                                {{item.val}}
+                            </h1>
+                        </div>
+                        <mat-divider class="my-3 w-full"></mat-divider>
+                    </div>
+                }
+            </div>
+        </div>
+
+           <!-- Detalle de Construcción -->
+           <div class="flex flex-col gap-4 w-full">
+            <div class="flex items-center gap-x-2 w-full">
+                <mat-icon class="text-primary" svgIcon="heroicons_solid:building-office-2"></mat-icon>
+                <h1 class="text-primary font-medium">Detalle de Construcción</h1>
+            </div>
+            <div class=" flex justify-between items-center">
+                <div class="flex gap-x-2">
+                    <mat-icon class="text-[#008db8] " svgIcon="heroicons_solid:link"></mat-icon>
+                    <a class="text-[#008db8] pointer underline underline-offset-4" href="https://busquedas.elperuano.pe/dispositivo/NL/2229957-1">Valores unitarios de edificación</a>
+                </div>
+                <p class="bg-secondary text-white p-2 rounded-md"> 1 Pisos</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table mat-table [dataSource]="dataSourceP" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="floor">
+                        <th mat-header-cell *matHeaderCellDef>Piso</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.floor }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="class">
+                        <th mat-header-cell *matHeaderCellDef>Clasificación</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.class }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="state_cons">
+                        <th mat-header-cell *matHeaderCellDef>Estado conservación</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.state_cons }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="yearConst">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Año construcción
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.yearConst }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="ceiling">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Techos
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.ceiling }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="walls">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Muros y columnas
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.walls }}
+                        </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="doors">
+                        <th mat-header-cell *matHeaderCellDef>Puertas y ventanas</th>
+                        <td mat-cell *matCellDef="let element">
+                            {{ element.doors }}
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumnsP"></tr>
+                    <tr
+                        mat-row
+                        *matRowDef="let row; columns: displayedColumnsP"
+                    ></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

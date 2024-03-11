@@ -1,18 +1,20 @@
-<div class="flex flex-col  flex-auto bg-white md:justify-center sm:flex-row gap-y-4">
-    <div
-        class="flex items-center p-4 justify-end min-w-1/2 sm:w-full md:h-full  px-4 sm:p-12 md:p-16"
-    >
-        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+<div class="flex flex-auto flex-col bg-white  gap-y-4 w-full justify-center lg:justify-start md:flex-row">
+    <div class=" hidden image-container w-5/12 lg:flex">
+    <img class="" src="assets/images/logo/map_logo.jpg" alt="" />
+    </div>
+    <div class="flex items-center p-4 justify-center ">
+        <div class=" sm:w-80 mx-auto sm:mx-0">
             <!-- Logo -->
-            <div class="w-2/4">
+            <div class="">
                 <img src="assets/images/logo/logo_mef.jpg" />
             </div>
 
             <!-- Title -->
             <div
-                class="mt-8 text-4xl font-extrabold tracking-tight leading-tight"
+                class="mt-8 text-xl font-extrabold tracking-tighter leading-tight"
             >
-                Iniciar Sesion
+                Plataforma de consulta de castastro del Ministerio de Economia y
+                Finanzas
             </div>
             <div class="flex items-center mt-0.5">
                 <div>Utilice las imagenes como referencia</div>
@@ -45,9 +47,7 @@
                     >
                         Numero de Dni es requerido
                     </mat-error>
-                    <mat-error
-                        *ngIf="signInForm.get('dni').hasError('dni')"
-                    >
+                    <mat-error *ngIf="signInForm.get('dni').hasError('dni')">
                         Por favor ingrese un numero de dni valido
                     </mat-error>
                 </mat-form-field>
@@ -67,13 +67,14 @@
                 </mat-form-field>
 
                 <div class="flex w-full gap-x-1">
-                    <div class ="flex items-center gap-x-1 h-12 w-6/12">
-                        <img class="h-11 w-24"
-                        *ngIf="captcha"
-                        src="data:image/png;base64,{{
-                            this.captcha.captchaImage
-                        }}"
-                    />
+                    <div class="flex items-center gap-x-1 h-12 w-6/12">
+                        <img
+                            class="h-11 w-24"
+                            *ngIf="captcha"
+                            src="data:image/png;base64,{{
+                                this.captcha.captchaImage
+                            }}"
+                        />
                         <button mat-icon-button (click)="getCaptcha()">
                             <mat-icon
                                 class="icon-size-5"
@@ -118,7 +119,7 @@
                     [disabled]="signInForm.disabled"
                     (click)="signIn()"
                 >
-                    <span *ngIf="!signInForm.disabled"> Iniciar sesión </span>
+                    <span *ngIf="!signInForm.disabled"> Ingresar </span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"
                         [diameter]="24"
@@ -128,12 +129,9 @@
             </form>
         </div>
     </div>
-    <div
-        class="flex md:justify-start p-4 items-center flex-auto min-w-1/2 lg:p-16 overflow-hidden bg-secondary-50 h-full md:p-12 justify-center"
-    >
-        <div class="flex flex-col items-center justify-center gap-y-4">
-            <img src="assets/images/logo/dni-azul.svg" alt="" />
-            <img src="assets/images/logo/dni-electronico.svg" alt="" />
-        </div>
+
+    <div class="flex flex-col items-center justify-center gap-4 px-16 py-4">
+        <img src="assets/images/logo/dni-azul.svg" alt="" />
+        <img src="assets/images/logo/dni-electronico.svg" alt="" />
     </div>
 </div>

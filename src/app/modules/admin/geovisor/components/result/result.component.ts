@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FuseScrollbarDirective } from '@fuse/directives/scrollbar';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LandComponent } from 'app/shared/components/land/land.component';
 
 @Component({
     selector: 'result',
@@ -16,7 +17,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatDividerModule,
         MatButtonModule,
         FuseScrollbarDirective,
-        MatTooltipModule
+        MatTooltipModule,
+        LandComponent
     ],
     templateUrl: './result.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -80,7 +82,7 @@ export class ResultComponent {
 
     }
     goToDetail(id){
-        this._router.navigate(['./', id], {relativeTo: this._activatedRoute});
+        this._router.navigate(['./../', id], {relativeTo: this._activatedRoute});
     }
     zoomIn(){
 

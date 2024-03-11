@@ -1,0 +1,14 @@
+<div class="flex flex-col flex-auto w-[92vw] md:w-full">
+    <div class="w-full flex items-center p-2">
+        <span class="m-2 text-lg font-medium">Lista de Predios </span>
+    </div>
+    <div class="h-[90vh]"
+    fuseScrollbar
+        [fuseScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}"
+    >
+        @for (item of data; track $index) {
+        <app-land [item]="item"></app-land>
+        <mat-divider class="my-1"></mat-divider>
+        }
+    </div>
+</div>
